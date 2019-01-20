@@ -10,11 +10,13 @@ Cette date servira a déterminer si on est à J+1, s'entend le jour suivant et n
 Afin de déclencher l'envoi des emails, plusieurs solutions :
 
 1- **PRÉFÉRÉE** : Définir une tâche CRON sur le serveur à 9h du matin par exemple qui déclenchera un script php.
-**Nécessite CRON sur serveur!**
+**Nécessite CRON sur le serveur!**
 
 L'envoi d'un email à J+1 pour les paniers abandonnés s'effectue avec la commande
 
 	bin/console app:execute
+
+**Pour tester la commande**, je n'ai pas créé de fixtures. Il suffit, lorsque des produits auront été ajoutés au panier, de mettre la date du champ 'updated_at' de la table 'basket' au jour précédent.
 
 exemple de tâche CRON à ajouter
 
