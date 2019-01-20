@@ -1,0 +1,23 @@
+{% extends 'main/base.html.twig' %}
+
+{% block content %}
+    <h1 class="h3 text-center">Connexion!</h1>
+
+    {% if error %}
+        <div class="alert alert-danger">
+            {{ error.messageKey|trans(error.messageData, 'security') }}
+        </div>
+    {% endif %}
+
+    {{ form_start(form) }}
+        {{ form_row(form._username, {
+            'label': 'Nom d\'utilisateur'
+        }) }}
+        {{ form_row(form._password, {
+            'label': 'Mot de passe'
+        }) }}
+        <button type="submit" class="btn btn-success">Connexion</button>
+        &nbsp;
+        <a href="{{ path('user_register') }}">S'inscrire</a>
+    {{ form_end(form) }}
+{% endblock %}

@@ -1,0 +1,33 @@
+{# app/Resources/views/email/abandonedBasketDayAfter.html.twig #}
+
+<h1 class="h3 text-center">Nous avons gardé votre panier</h1>
+{% set total = 0 %}
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Produit</th>
+        <th scope="col">Prix</th>
+    </tr>
+    </thead>
+    <tbody>
+{% for product in basket.products %}
+    <tr>
+        <td>{{ product.title }}</td>
+        <td>{{ product.price }}€</td>
+    </tr>
+    {% set total = total + product.price %}
+{% endfor %}
+    <tr>
+
+        <td class="text-right">Total :</td>
+        <td>{{ total }}€</td>
+    </tr>
+    </tbody>
+</table>
+<div class="row">
+    <div class="col-md-12 text-center">
+        <a class="btn btn-success btn-sm" href="{{ absolute_url(path('basket_view')) }}" role="button">
+        Voir mon panier
+        </a>
+    </div>
+</div>

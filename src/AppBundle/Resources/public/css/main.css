@@ -1,0 +1,29 @@
+body{
+    color: #333333;
+    font-size: 12px;
+}
+
+#content {
+    padding-top: 5rem;
+}
+
+.float-left-bottom {
+    position: relative;
+    top: unset !important;
+    bottom: -1rem;
+    left: -3rem;
+}
+
+a.list{
+    height: 5rem;
+}
+
+.pic{
+    height: 4rem;
+}
+
+@media screen and (min-width: 1200px) {
+    body {
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,14 @@
+<nav class="navbar fixed-top navbar-light bg-light">
+    <a class="navbar-brand" href="{{ path('main_home') }}">5€ test</a>
+    <div class="">
+        <a class="btn mr-4 disable" href="{{ path('basket_view') }}" tabindex="-1" aria-disabled="true">
+        <i class="align-middle fas fa-shopping-basket fa-2x"></i>{% if is_granted('ROLE_USER') and app.user.basket.products is defined and app.user.basket.products|length > 0 %}
+        <span class="float-left-bottom badge badge-1rem badge-pill badge-danger">{{ app.user.basket.products|length }}</span>
+        {% endif %}</a>
+    {% if is_granted('ROLE_USER') %}
+        <a href="{{ path('security_logout') }}" class="btn btn-outline-danger my-2 my-sm-0" role="button">Déconnexion</a>
+    {% else %}
+        <a href="{{ path('security_login') }}" class="btn btn-outline-success my-2 my-sm-0" role="button">Connexion</a>
+    {% endif %}
+    </div>
+</nav>
